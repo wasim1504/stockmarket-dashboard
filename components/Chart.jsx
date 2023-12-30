@@ -2,7 +2,7 @@ import React from "react";
 import { LineChart } from "react-native-chart-kit";
 import { View, Text, StyleSheet } from "react-native";
 
-const StockChart = ({ data }) => {
+const StockChart = ({ data, symbol }) => {
   // Ensure that data is an array and not empty
   if (!Array.isArray(data) || data.length === 0) {
     return (
@@ -29,7 +29,7 @@ const StockChart = ({ data }) => {
 
   return (
     <View style={styles.chartContainer}>
-      <Text style={styles.chartTitle}>Stock Chart</Text>
+      <Text style={styles.chartTitle}>{symbol}</Text>
       <LineChart
         data={{
           labels: xlabel,
